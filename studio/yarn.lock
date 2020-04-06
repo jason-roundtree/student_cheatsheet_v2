@@ -801,9 +801,9 @@
   version "0.7.4"
   resolved "https://registry.npmjs.org/@reach/auto-id/-/auto-id-0.7.4.tgz#c20bf6db87ef2f34b1bfb4bf450d675524a368c1"
 
-"@sanity/base@1.149.8", "@sanity/base@^1.149.8":
-  version "1.149.8"
-  resolved "https://registry.npmjs.org/@sanity/base/-/base-1.149.8.tgz#54caab90f5a6ecee67050207bef47a90f30bdf25"
+"@sanity/base@1.149.10", "@sanity/base@^1.149.10":
+  version "1.149.10"
+  resolved "https://registry.npmjs.org/@sanity/base/-/base-1.149.10.tgz#4b813600b707f4ddc0ea579189d125258d434b49"
   dependencies:
     "@sanity/client" "1.149.7"
     "@sanity/generate-help-url" "1.149.0"
@@ -862,11 +862,11 @@
     make-error "^1.3.0"
     object-assign "^4.1.1"
 
-"@sanity/components@^1.149.8":
-  version "1.149.8"
-  resolved "https://registry.npmjs.org/@sanity/components/-/components-1.149.8.tgz#10eef046e30709b7ab4dae529fe92bdbd5777b5d"
+"@sanity/components@^1.149.10":
+  version "1.149.10"
+  resolved "https://registry.npmjs.org/@sanity/components/-/components-1.149.10.tgz#b674eb8262a3e26404f07e2bbe553ceb38b08d22"
   dependencies:
-    "@sanity/base" "1.149.8"
+    "@sanity/base" "1.149.10"
     attr-accept "^1.1.0"
     boundless-arrow-key-navigation "^1.1.0"
     chance "^1.0.4"
@@ -969,11 +969,11 @@
     "@sanity/generate-help-url" "1.149.0"
     lodash "^4.17.15"
 
-"@sanity/default-layout@^1.149.8":
-  version "1.149.8"
-  resolved "https://registry.npmjs.org/@sanity/default-layout/-/default-layout-1.149.8.tgz#cfc18bf3c0b8167f677292842c6a345cf01fee9d"
+"@sanity/default-layout@^1.149.10":
+  version "1.149.10"
+  resolved "https://registry.npmjs.org/@sanity/default-layout/-/default-layout-1.149.10.tgz#82893c604c49884d1828ffd8c5ca484c56f69707"
   dependencies:
-    "@sanity/base" "1.149.8"
+    "@sanity/base" "1.149.10"
     "@sanity/generate-help-url" "1.149.0"
     is-hotkey "^0.1.4"
     lodash "^4.17.15"
@@ -991,17 +991,17 @@
     prop-types "^15.6.0"
     rxjs "^6.5.3"
 
-"@sanity/desk-tool@^1.149.8":
-  version "1.149.8"
-  resolved "https://registry.npmjs.org/@sanity/desk-tool/-/desk-tool-1.149.8.tgz#da21d94fc87d6552fa499d83376c425609ca9138"
+"@sanity/desk-tool@^1.149.10":
+  version "1.149.10"
+  resolved "https://registry.npmjs.org/@sanity/desk-tool/-/desk-tool-1.149.10.tgz#c274c531d9773c8fa327ce87e96b52b05bea4e95"
   dependencies:
     "@reach/auto-id" "^0.7.2"
-    "@sanity/base" "1.149.8"
+    "@sanity/base" "1.149.10"
     "@sanity/data-aspects" "1.149.7"
     "@sanity/form-builder" "1.149.7"
     "@sanity/generate-help-url" "1.149.0"
     "@sanity/mutator" "1.149.0"
-    "@sanity/react-hooks" "1.149.8"
+    "@sanity/react-hooks" "1.149.10"
     "@sanity/structure" "1.149.7"
     "@sanity/uuid" "1.149.0"
     "@sanity/validation" "1.149.0"
@@ -1175,11 +1175,11 @@
     rxjs "^6.5.3"
     shallow-equals "^1.0.0"
 
-"@sanity/react-hooks@1.149.8":
-  version "1.149.8"
-  resolved "https://registry.npmjs.org/@sanity/react-hooks/-/react-hooks-1.149.8.tgz#18883e949dc9eb7993bf1617377db976591340a3"
+"@sanity/react-hooks@1.149.10":
+  version "1.149.10"
+  resolved "https://registry.npmjs.org/@sanity/react-hooks/-/react-hooks-1.149.10.tgz#07dddeded163ff2adc7b85917550893f2d18bbe2"
   dependencies:
-    "@sanity/base" "1.149.8"
+    "@sanity/base" "1.149.10"
     lodash "^4.17.15"
     rxjs "^6.5.3"
     shallow-equals "^1.0.0"
