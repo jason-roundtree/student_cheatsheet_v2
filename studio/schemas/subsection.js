@@ -6,13 +6,13 @@ export default {
         {
             title: 'Name',
             name: 'name',
-            type: 'string',
-            validation: Rule => Rule.unique()
+            type: 'string'
         },
         {
             title: 'Description',
             name: 'description',
             type: 'text',
+            rows: 4
         },
         {
             title: 'Code Samples',

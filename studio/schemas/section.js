@@ -16,7 +16,8 @@ export default {
         {
             title: 'Description',
             name: 'description',
-            type: 'text'
+            type: 'text',
+            rows: 4
         },
         {
             title: 'Subsections',
