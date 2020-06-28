@@ -9,6 +9,11 @@ export default {
             type: 'string'
         },
         {
+            title: 'Anchor ID',
+            name: 'anchor_id',
+            type: 'string'
+        },
+        {
             title: 'Type',
             name: 'type',
             type: 'string'

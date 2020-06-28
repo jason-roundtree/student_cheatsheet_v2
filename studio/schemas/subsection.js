@@ -17,7 +17,7 @@ export default {
         {
             title: 'Code Samples',
             name: 'code_samples',
-            type: 'string'
+            type: 'text'
         },
         {
             title: 'Syntax',
