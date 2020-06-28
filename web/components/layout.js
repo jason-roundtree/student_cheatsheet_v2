@@ -1,27 +1,35 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
+import Footer from './footer'
 
 const ListLink = props => (
-    <li style={{ display: `inline-block`, marginRight: `1rem` }}>
+    <li>
         <Link to={props.to}>{props.children}</Link>
     </li>
 )
 
-export default ({ children }) => (
-    <div id='layout'>
-        <header>
-            <Link to='/'>
-                <h1 style={{ textAlign: `center` }}>Student Cheatsheet & Reference</h1>
-            </Link>
+export default function Layout({ children }) {
+    return (
+        <div id='layout'>
+            <header>
+                <Link to='/'>
+                    <h1>Web Dev Student Cheatsheet & Reference</h1>
+                </Link>
 
-            <ul style={{ margin: `auto`, textAlign: `center` }}>
-                <ListLink to='/'>Home</ListLink>
-                <ListLink to='/about'>About</ListLink>
-            </ul>
-        </header>
-        
-        <div>
-            {children}
+                <nav>
+                    <ul>
+                        <ListLink to='/'>Home</ListLink>
+                        <ListLink to='/about'>About</ListLink>
+                    </ul>
+                </nav>
+            </header>
+            
+            <div>
+                {children}
+            </div>
+            
+            <Footer />
         </div>
-    </div>
-)
+    )
+}
+
