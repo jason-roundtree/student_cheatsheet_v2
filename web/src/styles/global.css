@@ -1,6 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 #layout {
     margin: 2rem auto;
-    max-width: 700px;
+    max-width: 800px;
     padding: 0 1rem;
 }
 
@@ -19,5 +25,86 @@ h1 {
 }
 
 .incomplete_section::after {
-    content: ' (Coming Soon)'
-  }
+    content: ' (Coming Soon)';
+}
+
+.table_container {
+    overflow-x: auto;
+}
+  
+table {
+    width: 100%;
+}
+  
+table, th, td {
+    font-size: .9em;
+    border: 1px solid rgb(144, 210, 245);
+    border-collapse: collapse;
+    text-align: center;
+    margin: 10px 0;
+    /* overriding gatsby typography? */
+    line-height: 1.2;
+}
+ 
+thead th {
+    background-color: rgb(144, 210, 245);
+}
+  
+thead th:first-of-type, 
+thead th:first-of-type + th,
+.row_header, 
+.row_header + td {
+    border-right: 1px solid rgb(94, 183, 232);
+}
+
+th {
+    padding: 10px;
+}
+  
+td {
+    height: 35px;
+    padding: 5px 10px;
+}
+
+/* overriding gatsby typography? */
+td:last-child {
+    padding-right: 10px;
+}
+
+tr:nth-of-type(even) {
+    background-color: rgb(235, 232, 232);
+}
+  
+tr:nth-of-type(odd) {
+    background-color: white;
+}
+  
+/* .row_header {
+    font-family: 'Barlow', sans-serif;
+} */
+  
+tr th:first-child, tr td:first-child {
+    width: 20%;
+    padding: 3px;
+}
+
+kbd {
+    font-family: 'Courier Prime', monospace;
+    background-color: rgb(34, 34, 34);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+    /* overriding gatsby typography? */
+    font-size: .9em;
+}
+
+footer {
+    margin: 40px 0 0;
+    text-align: center;
+    border-top: 1px solid rgb(94, 183, 232);
+}
+
+footer span {
+    display: block;
+}

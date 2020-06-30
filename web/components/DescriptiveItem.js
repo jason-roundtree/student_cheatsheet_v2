@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function DescriptiveItem(props) {
-    console.log('DescriptiveItem props: ', props)
+export default function DescriptiveItem({ section }) {
+    console.log('DescriptiveItem props: ', section)
     return (
         <div>
-            {props.section.subsections.map(secData => {
+            {section.subsections.map(secData => {
                     // console.log('secData: ', secData)
                     return (
                         <div 
@@ -27,14 +27,14 @@ export default function DescriptiveItem(props) {
 
                             {secData.external_links && (
                                 <ul>
-                                    {secData.external_links.map((link, i) => (
-                                        <li key={i}>
+                                    {secData.external_links.map(link => (
+                                        <li key={link._id}>
                                             <a 
                                                 href={link.href} 
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
-                                                {link.linkDescription}
+                                                {link.description}
                                             </a>
                                         </li>
                                     ))}

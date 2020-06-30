@@ -1,19 +1,29 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
+import Footer from '../../components/footer'
 import ToC from '../../components/TableOfContents'
 import TopicSection from '../../components/TopicSection'
 
 export default function Index({ data }) {
-    console.log('data: ', data)
+    console.log('Index data: ', data)
     return (
+      <div>
         <Layout>
             <ToC data={data.allSanitySection.edges} />
+
             {data.allSanitySection.edges.map(section => {
-              return <TopicSection section={section.node} />
+              return (
+                <TopicSection 
+                  section={section.node} 
+                  key={section._id}
+                />
+              )
             })}
-            
         </Layout>
+
+        <Footer />
+      </div>
     )
 }
 

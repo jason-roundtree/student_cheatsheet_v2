@@ -5,14 +5,23 @@ import DescriptiveItem from './DescriptiveItem'
 export default function TopicSection(props) {
     console.log('TopicSection props: ', props)
     return (
-        <section id={props.section.anchor_id}>
-            <h3 className={props.section_active ? 'incomplete_section' : ''}>
+        <section 
+            id={props.section.anchor_id}
+            // key={props.section._id}
+        >
+            <h3 
+                className={
+                    props.section.section_active 
+                        ? ''
+                        : 'incomplete_section'
+                }
+            >
                 {props.section.name}
             </h3>
 
-            {props.section.sectionDescription && (
+            {props.section.description && (
                 <p className="section_description">
-                    {props.section.sectionDescription}
+                    {props.section.description}
                 </p>    
             )}
 

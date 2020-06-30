@@ -18,8 +18,17 @@ export default function ShortcutTable(props) {
                         return (
                             <tr key={secData.name}>
                                 <th className="row_header">{secData.name}</th>
-                                <td><kbd>{secData.mac_command}</kbd></td>
-                                <td><kbd>{secData.windows_command}</kbd></td>
+                                <td>
+                                    {secData.mac_command && 
+                                        <kbd>{secData.mac_command}</kbd>
+                                    }
+                                    
+                                </td>
+                                <td>
+                                    {secData.windows_command && 
+                                        <kbd>{secData.windows_command}</kbd>
+                                    }   
+                                </td>
                             </tr>
                         )
                     })}

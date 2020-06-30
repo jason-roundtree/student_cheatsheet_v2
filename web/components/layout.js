@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Footer from './footer'
+
 
 const ListLink = props => (
     <li>
@@ -9,6 +9,9 @@ const ListLink = props => (
 )
 
 export default function Layout({ children }) {
+    // TODO: is it problematic getting pathname from window? Better way to do it using Gatsby with Reach Router?
+    const path = window.location.pathname
+    console.log('path: ', path)
     return (
         <div id='layout'>
             <header>
@@ -18,8 +21,12 @@ export default function Layout({ children }) {
 
                 <nav>
                     <ul>
-                        <ListLink to='/'>Home</ListLink>
-                        <ListLink to='/about'>About</ListLink>
+                        {path === "/" 
+                            ?   <ListLink to='/about'>About</ListLink>
+                            :   <ListLink to='/'>Home</ListLink>
+                        }
+                        
+                        
                     </ul>
                 </nav>
             </header>
@@ -28,7 +35,7 @@ export default function Layout({ children }) {
                 {children}
             </div>
             
-            <Footer />
+            
         </div>
     )
 }

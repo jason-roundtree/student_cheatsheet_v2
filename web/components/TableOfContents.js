@@ -6,7 +6,7 @@ export default function TableOfContents({ data }) {
         <div>
             <h2>Table of Contents</h2>
             <nav>
-                {/* TODO: figure out some way to order the different sections */}
+                {/* TODO: figure out some way to order the different sections and subsections */}
                 <ul>
                     {data.map(({ node }) => {
                         console.log('node map', node)
