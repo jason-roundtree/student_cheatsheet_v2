@@ -3,7 +3,7 @@ import React from 'react'
 export default function TableOfContents({ data }) {
     console.log('ToC data: ', data)
     return (
-        <div>
+        <div id="toc">
             <h2>Table of Contents</h2>
             <nav>
                 {/* TODO: figure out some way to order the different sections and subsections */}

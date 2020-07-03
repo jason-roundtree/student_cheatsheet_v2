@@ -9,21 +9,25 @@ export default function TopicSection(props) {
             id={props.section.anchor_id}
             // key={props.section._id}
         >
-            <h3 
-                className={
-                    props.section.section_active 
-                        ? ''
-                        : 'incomplete_section'
-                }
-            >
-                {props.section.name}
-            </h3>
+            <div className='section_header'>
+                <h3 
+                    className={
+                        props.section.section_active 
+                            ? ''
+                            : 'incomplete_section'
+                    }
+                >
+                    {props.section.name}
+                </h3>
 
-            {props.section.description && (
-                <p className="section_description">
-                    {props.section.description}
-                </p>    
-            )}
+                {props.section.description && (
+                        <p className="section_description">
+                            {props.section.description}
+                        </p>    
+                        
+                    
+                )}
+            </div>
 
             {props.section.type === 'shortcut_table' 
                 ? (

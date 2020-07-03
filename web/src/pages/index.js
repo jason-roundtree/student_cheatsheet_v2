@@ -8,7 +8,7 @@ import TopicSection from '../../components/TopicSection'
 export default function Index({ data }) {
     console.log('Index data: ', data)
     return (
-      <div>
+      <>
         <Layout>
             <ToC data={data.allSanitySection.edges} />
 
@@ -23,7 +23,7 @@ export default function Index({ data }) {
         </Layout>
 
         <Footer />
-      </div>
+      </>
     )
 }
 

@@ -13,7 +13,7 @@ export default function DescriptiveItem({ section }) {
                         >
                             <h4>{secData.name}</h4>
 
-                            {secData.description !== "" && (
+                            {secData.description && (
                                 <p>{secData.description}</p>
                             )}
 
@@ -25,12 +25,12 @@ export default function DescriptiveItem({ section }) {
                                 </pre>      
                             )}
 
-                            {secData.external_links && (
+                            {secData.external_links.length > 0 && (
                                 <ul>
                                     {secData.external_links.map(link => (
                                         <li key={link._id}>
                                             <a 
-                                                href={link.href} 
+                                                href={link.url} 
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
