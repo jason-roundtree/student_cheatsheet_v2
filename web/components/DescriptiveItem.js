@@ -1,16 +1,14 @@
 import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import styled from 'styled-components'
-import duotoneLight from 'prism-react-renderer/themes/duotoneLight'
+import duotoneLight from 'prism-react-renderer/themes/oceanicNext'
 
-// TODO: fix text overflow
 const Pre = styled.pre`
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Inconsolata', monospace;
     font-size: .9em;
     overflow: auto;
     text-align: left;
-    /* margin: 1em 0; */
-    padding: 0.5em;
+    padding: 0.5em 0.5em 0.5em 0;
     & .token-line {
         line-height: 1.4em;
         height: 1.3em;
@@ -18,16 +16,13 @@ const Pre = styled.pre`
 `
 const LineNo = styled.span`
     display: inline-block;
-    padding-right: 1em;
+    text-align: right;
+    width: 1.5em;
+    margin: 0 1em 0 0;
     user-select: none;
     opacity: 0.5;
+    color: rgb(144, 210, 245);
 `
-// const Line = styled.div`
-//     display: table-row;
-// `
-// const LineContent = styled.span`
-//     display: table-cell;
-// `
 
 export default function DescriptiveItem({ section }) {
     console.log('DescriptiveItem props: ', section)
