@@ -20,6 +20,11 @@ export default {
             type: 'text'
         },
         {
+            title: 'Code',
+            name: 'code',
+            type: 'code'
+        },
+        {
             title: 'Syntax',
             name: 'syntax',
             type: 'string'

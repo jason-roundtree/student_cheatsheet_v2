@@ -52,9 +52,13 @@ export const query = graphql`
               _type
               name
               description
-              code_samples
               syntax
               subsection_active
+              code {
+                _type
+                code
+                language
+              }
               external_links {
                 _id
                 _type

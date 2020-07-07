@@ -51,5 +51,16 @@ export default {
                 to: [{ type: 'external_link' }]
             }]
         },
+        {
+            title: 'List Order',
+            name: 'list_order',
+            type: 'number',
+            validation: Rule => Rule.integer(),
+            validation: Rule => Rule.positive(),
+            // validation: Rule => Rule.custom(orderNum => {
+            //     return orderNum > 3 ? true : 'Another section is already assigned to this order number.'
+            //     // orderNumUnique(orderNum) ? true : 'Another section is already assigned to this order number.'
+            // })
+        }
     ]
 }
