@@ -29,7 +29,7 @@ export default function Index({ data }) {
 
 export const query = graphql`
   {
-    allSanitySection {
+    allSanitySection(sort: {fields: list_order}) {
       edges {
         node {
           _id
@@ -39,6 +39,7 @@ export const query = graphql`
           _type
           name
           description
+          list_order
           external_links {
             _id
             _type
@@ -47,23 +48,22 @@ export const query = graphql`
           }
           subsections {
             ... on SanityGeneralSubsection {
-              id
               _id
               _type
               name
               description
               syntax
               subsection_active
-              code {
-                _type
-                code
-                language
-              }
               external_links {
                 _id
                 _type
                 description
                 url
+              }
+              code {
+                _type
+                code
+                language
               }
             }
             ... on SanityShortcutSubsection {

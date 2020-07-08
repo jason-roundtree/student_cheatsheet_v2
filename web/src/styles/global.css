@@ -70,21 +70,18 @@ header h1 {
 }
 
 h2 {
+    color: rgb(67, 159, 208);
     margin-top: 50px;
     font-weight: 400;
 }
 
 h3 {
+    color: rgb(255, 159, 128);
     margin-bottom: 10px;
     font-weight: 600;
 }
 
-h1, h2, h3 {
-    color: rgb(144, 210, 245)
-}
-
 h2, h3 {
-    color: rgb(67, 159, 208);
     font-size: 1.7em;
 }
 
@@ -99,14 +96,6 @@ h2, h4, thead th {
 .section_header {
     margin: 50px 0 20px;
 }
-
-/* .section_description {
-    font-family: 'Work Sans', sans-serif;
-    padding: 5px;
-    border: 1px dashed rgb(252, 93, 93);
-    border-top: 0;
-    background-color: white;
-} */
 
 .incomplete_section::after {
     content: ' (Coming Soon)';

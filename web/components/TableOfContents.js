@@ -1,4 +1,10 @@
 import React from 'react'
+import styled from 'styled-components'
+
+// const H2 = styled.h2`
+//     margin-top: 50px;
+//     font-weight: 400;
+// `
 
 export default function TableOfContents({ data }) {
     console.log('ToC data: ', data)
