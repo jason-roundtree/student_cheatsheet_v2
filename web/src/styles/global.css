@@ -37,7 +37,7 @@ a {
 a:hover {
     /* text-decoration: underline; */
     /* color: rgb(144, 210, 245); */
-    border-bottom: 2px solid rgb(144, 210, 245);
+    border-bottom: 2px solid rgb(255, 159, 128);
 }
 
 header {
@@ -129,14 +129,14 @@ h2, h4, thead th {
   
 .description_container ul {
     background-color: rgb(235, 232, 232);
+    font-size: .9em;
 }
 
 .description_container li a {
     font-family: 'Work Sans', sans-serif;
 }
 
-.description_container li::before,
-.description_container li::after {
+.description_container li::before {
     content: ' \2022 ';
 }
 
@@ -238,6 +238,9 @@ footer span {
     line-height: 1.5;
 }
 
-/* @media screen and (max-width: 672px) {
-    
-} */
+@media screen and (max-width: 672px) {
+    body {
+        font-size: .8em;  
+    }
+  
+}

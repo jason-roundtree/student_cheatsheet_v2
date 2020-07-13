@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function ShortcutTable(props) {
-    console.log('ShortcutTable props: ', props)
+    // console.log('ShortcutTable props: ', props)
     return (
         <div className="table_container">
             <table>

@@ -25,7 +25,7 @@ const LineNo = styled.span`
 `
 
 export default function DescriptiveItem({ section }) {
-    console.log('DescriptiveItem props: ', section)
+    // console.log('DescriptiveItem props: ', section)
     return (
         <div>
             {section.subsections.map(secData => {

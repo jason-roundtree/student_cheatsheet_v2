@@ -26,9 +26,9 @@ export default function Layout({ children }) {
                 </nav>
             </header>
             
-            <div>
+            <>
                 {children}
-            </div>
+            </>
             
         </div>
     )
