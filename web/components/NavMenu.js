@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const NavMenuPanel = styled.nav`
@@ -18,15 +19,22 @@ const A = styled.a`
     }
 `
 
-export default function NavMenu({ data }) {
-    console.log('menu props: ', data)
+export default function NavMenu({ data, handleNavMenuToggle }) {
+    // console.log('menu props: ', data)
+
     return (
         <NavMenuPanel>
             <ul>
+                <li>
+                    <A href='#top-of-page'>Home</A>
+                </li>
                 {data.map(({ node }) => {
                     return node.section_active && (
                         <li key={node._id}>
-                            <A href={`#${node.anchor_id}`}>
+                            <A 
+                                href={`#${node.anchor_id}`}
+                                onClick={handleNavMenuToggle}
+                            >
                                 {node.name}
                             </A>
                         </li>

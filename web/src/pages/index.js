@@ -6,22 +6,23 @@ import Footer from '../../components/footer'
 import ToC from '../../components/TableOfContents'
 import NavMenu from '../../components/NavMenu'
 import TopicSection from '../../components/TopicSection'
-import { styles } from 'prism-react-renderer/themes/oceanicNext'
+// import { styles } from 'prism-react-renderer/themes/oceanicNext'
 
-// TODO: add styles
 const SecondaryNavBar = styled.nav`
-
-`
-const NavMenuBtn = styled.button`
+  display: flex;
+  align-content: center;
   position: fixed;
   top: 0;
-  right: 0;
+  width: 100%;
+  background-color: rgb(255, 159, 128);
+`
+const NavMenuBtn = styled.button`
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1em;
   z-index: 1;
-  opacity: .7;
-  height: 50px;
-  /* width: 100%; */
   background-color: rgb(255, 159, 128);
   text-align: center;
+  padding: 5px;
   border: none;
   &:hover {
     cursor: pointer;
@@ -30,8 +31,8 @@ const NavMenuBtn = styled.button`
 
 export default function Index({ data }) {
   // these "nav" references are for the secondary nav that appears once you've scrolled past table of contents
-  const [navActive, setNavActive] = useState(false)
-  const [navMenuActive, toggleNavMenu] = useState(false)
+  const [navIsActive, setNavIsActive] = useState(false)
+  const [navMenuIsActive, setNavMenuIsActive] = useState(false)
   // console.log('Index data: ', data)
 
   useEffect(() => {
@@ -45,19 +46,20 @@ export default function Index({ data }) {
     console.log('handleScroll')
     // TODO: replace offset number with calculation that determines once ToC section has been passed
     if (window.pageYOffset > 900) {
-      setNavActive(true)
+      setNavIsActive(true)
     } else {
-      setNavActive(false)
+      setNavIsActive(false)
+      setNavMenuIsActive(false)
     }
   }
 
   function handleNavMenuToggle() {
-    toggleNavMenu(navMenuActive ? false : true)
+    setNavMenuIsActive(navMenuIsActive ? false : true)
   }
 
   return (
     <>
-      <Layout>
+      <Layout id="top-of-page">
           <ToC data={data.allSanitySection.edges} />
           
           {data.allSanitySection.edges.map(section => {
@@ -70,7 +72,7 @@ export default function Index({ data }) {
           })}
       </Layout>
 
-      {navActive && (
+      {navIsActive && (
         <SecondaryNavBar>
           <NavMenuBtn 
             id="navmenu_button"
@@ -78,11 +80,13 @@ export default function Index({ data }) {
           >
             Toggle Menu
           </NavMenuBtn>
+          {navMenuIsActive && (
+            <NavMenu 
+              data={data.allSanitySection.edges} 
+              handleNavMenuToggle={handleNavMenuToggle}
+            />
+          )}
         </SecondaryNavBar>
-      )}
-
-      {navMenuActive && (
-        <NavMenu data={data.allSanitySection.edges} />
       )}
 
       <Footer />

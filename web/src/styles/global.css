@@ -30,13 +30,10 @@ li {
 
 a {
     text-decoration: none;
-    /* color: rgb(144, 210, 245); */
     color: black;
 }
 
 a:hover {
-    /* text-decoration: underline; */
-    /* color: rgb(144, 210, 245); */
     border-bottom: 2px solid rgb(255, 159, 128);
 }
 
