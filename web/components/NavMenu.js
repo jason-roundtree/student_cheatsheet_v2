@@ -1,5 +1,4 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
 const NavMenuPanel = styled.nav`
@@ -19,12 +18,11 @@ const A = styled.a`
     }
 `
 
-export default function NavMenu({ data, handleNavMenuToggle }) {
+export default function NavMenu({ data, handleNavMenuToggle, activeSection }) {
     // console.log('menu props: ', data)
-
     return (
         <NavMenuPanel>
-            <ul>
+            <ul id="navmenu_list">
                 <li>
                     <A href='#top-of-page'>Home</A>
                 </li>
@@ -34,6 +32,8 @@ export default function NavMenu({ data, handleNavMenuToggle }) {
                             <A 
                                 href={`#${node.anchor_id}`}
                                 onClick={handleNavMenuToggle}
+                                // TODO: instead of keeping current-section class in css file is there a way to do it with styled-components props and Gatsby
+                                className={node.anchor_id === activeSection && 'current-section'}
                             >
                                 {node.name}
                             </A>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../../components/layout'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import ToC from '../../components/TableOfContents'
 import NavMenu from '../../components/NavMenu'
 import TopicSection from '../../components/TopicSection'
@@ -33,17 +33,58 @@ export default function Index({ data }) {
   // these "nav" references are for the secondary nav that appears once you've scrolled past table of contents
   const [navIsActive, setNavIsActive] = useState(false)
   const [navMenuIsActive, setNavMenuIsActive] = useState(false)
-  // console.log('Index data: ', data)
+  const [activeSection, setActiveSection] = useState(null)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleObserver)
     return () => {
       window.removeEventListener('scroll', handleScroll)
+      // TODO: this should be here, right?
+      window.addEventListener('scroll', handleObserver)
     }
   }, [])
 
+  function handleObserver() {
+    const options = { rootMargin: '-30px 0px -50% 0px' };
+    const observer = new IntersectionObserver(checkIntersection, options)
+
+    const topicSections = document.querySelectorAll('section')
+    topicSections.forEach(section => {
+      observer.observe(section)
+    })
+    
+    function checkIntersection(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          intersectionHandler(entry)
+        }
+      })
+    }
+
+    function intersectionHandler(entry) {
+      // console.log('intersectionHandler entry: ', entry)
+      const id = entry.target.id      
+      setActiveSection(id)
+      const currentlyActive = document.querySelector('#navmenu_list .current-section')
+      // console.log('currentlyActive: ', currentlyActive)
+      const shouldBeActive = document.querySelector(`#navmenu_list a[href='#${id}']`)
+      // console.log('shouldBeActive: ', shouldBeActive)
+      if (currentlyActive) {
+        currentlyActive.classList.remove('current-section')
+        // console.log('currentlyActive if: ', currentlyActive)
+      }
+      if (shouldBeActive) {
+        shouldBeActive.classList.add('current-section')
+        // console.log('shouldBeActive if: ', shouldBeActive)
+      }
+    }
+  }
+
   function handleScroll() {
     console.log('handleScroll')
+    // TODO: is this all neccessary for cross-browser issues?
+    // setDocScrollTop(Math.max(document.documentElement.scrollTop, document.body.scrollTop))
     // TODO: replace offset number with calculation that determines once ToC section has been passed
     if (window.pageYOffset > 900) {
       setNavIsActive(true)
@@ -56,9 +97,9 @@ export default function Index({ data }) {
   function handleNavMenuToggle() {
     setNavMenuIsActive(navMenuIsActive ? false : true)
   }
-
+  
   return (
-    <>
+    <div>
       <Layout id="top-of-page">
           <ToC data={data.allSanitySection.edges} />
           
@@ -84,13 +125,15 @@ export default function Index({ data }) {
             <NavMenu 
               data={data.allSanitySection.edges} 
               handleNavMenuToggle={handleNavMenuToggle}
+              activeSection={activeSection}
+              id="navmenu_list"
             />
           )}
         </SecondaryNavBar>
       )}
 
       <Footer />
-    </>
+    </div>
   )
 }
 
