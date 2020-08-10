@@ -211,7 +211,7 @@ footer {
     margin: 40px 0 0;
     text-align: center;
     color: rgb(94, 183, 232);
-    background-color: rgb(94, 183, 232);;
+    background-color: rgb(94, 183, 232);
 }
 
 footer {
@@ -237,6 +237,7 @@ footer span {
 
 .current-section.current-section {
     color: rgb(144, 210, 245);
+    text-shadow: rgb(94, 183, 232) 1px 0 10px;
 }
 
 .highlight.highlight {

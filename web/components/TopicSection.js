@@ -10,11 +10,9 @@ import DescriptiveItem from './DescriptiveItem'
 // `
 
 export default function TopicSection(props) {
-    // console.log('TopicSection props: ', props)
     return (
         <section 
             id={props.section.anchor_id}
-            // key={props.section._id}
         >
             <div className='section_header'>
                 <h3 

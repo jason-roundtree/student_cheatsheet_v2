@@ -7,10 +7,7 @@ const ListLink = props => (
     </li>
 )
 
-export default function Layout({ children }) {
-    // TODO: is it problematic getting pathname from window? Better way to do it using Gatsby with React Router?
-    const path = window.location.pathname
-    console.log('path: ', path)
+export default function Layout(props) {
     return (
         <div id='layout'>
             <header>
@@ -18,7 +15,7 @@ export default function Layout({ children }) {
 
                 <nav>
                     <ul>
-                        {path === "/" 
+                        {props.id !== "about" 
                             ?   <ListLink to='/about'>About</ListLink>
                             :   <ListLink to='/'>Home</ListLink>
                         }
@@ -26,7 +23,7 @@ export default function Layout({ children }) {
                 </nav>
             </header>
             
-            <>{children}</>
+            <>{props.children}</>
             
         </div>
     )

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import throttle from 'lodash.throttle'
 import Layout from '../../components/layout'
 import Footer from '../../components/Footer'
 import ToC from '../../components/TableOfContents'
@@ -15,17 +16,21 @@ const SecondaryNavBar = styled.nav`
   top: 0;
   width: 100%;
   background-color: rgb(255, 159, 128);
+  /* box-shadow: 0px -5px 32px 6px rgb(255, 253, 240); */
 `
 const NavMenuBtn = styled.button`
   font-family: 'Work Sans', sans-serif;
   font-size: 1em;
   z-index: 1;
+  color: rgb(255, 253, 240);
   background-color: rgb(255, 159, 128);
   text-align: center;
-  padding: 5px;
+  padding: 5px 10px;
   border: none;
   &:hover {
     cursor: pointer;
+    /* text-shadow: rgb(94, 183, 232) 1px 0 10px; */
+    text-shadow: rgb(255, 253, 240) 1px 0 10px;
   }
 `
 
@@ -36,16 +41,17 @@ export default function Index({ data }) {
   const [activeSection, setActiveSection] = useState(null)
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    window.addEventListener('scroll', handleObserver)
+    window.addEventListener('scroll', throttle(handleScroll, 500))
+    window.addEventListener('scroll', throttle(handleObserver, 500))
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('scroll', throttle(handleScroll, 500))
       // TODO: this should be here, right?
-      window.addEventListener('scroll', handleObserver)
+      window.addEventListener('scroll', throttle(handleObserver, 500))
     }
-  }, [])
+  }, [data])
 
   function handleObserver() {
+    // console.log('handleObserver')
     const options = { rootMargin: '-30px 0px -50% 0px' };
     const observer = new IntersectionObserver(checkIntersection, options)
 
@@ -82,7 +88,7 @@ export default function Index({ data }) {
   }
 
   function handleScroll() {
-    console.log('handleScroll')
+    // console.log('handleScroll')
     // TODO: is this all neccessary for cross-browser issues?
     // setDocScrollTop(Math.max(document.documentElement.scrollTop, document.body.scrollTop))
     // TODO: replace offset number with calculation that determines once ToC section has been passed
@@ -103,11 +109,11 @@ export default function Index({ data }) {
       <Layout id="top-of-page">
           <ToC data={data.allSanitySection.edges} />
           
-          {data.allSanitySection.edges.map(section => {
+          {data.allSanitySection.edges.map(({node}) => {
             return (
               <TopicSection 
-                section={section.node} 
-                key={section._id}
+                section={node} 
+                key={node._id}
               />
             )
           })}
