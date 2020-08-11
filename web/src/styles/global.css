@@ -129,12 +129,19 @@ h2, h4, thead th {
     font-size: .9em;
 }
 
-.description_container li a {
+.description_container li a,
+.link_list {
     font-family: 'Work Sans', sans-serif;
 }
 
-.description_container li::before {
+.description_container li::before,
+.link_list li::before {
     content: ' \2022 ';
+}
+
+.link_list {
+   margin-top: 15px;
+   line-height: 1.5em;;
 }
 
 table {

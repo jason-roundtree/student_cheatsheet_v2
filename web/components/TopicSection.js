@@ -3,13 +3,12 @@ import ShortcutTable from './ShortcutTable'
 import DescriptiveItem from './DescriptiveItem'
 // import styled from 'styled-components'
 
-// const H3 = styled.h3`
-//     color: rgb(255, 163, 133);
-//     margin-bottom: 10px;
-//     font-weight: 600;
+// const LinkList = styled.ul`
+//     margin-top: 15px;
 // `
 
 export default function TopicSection(props) {
+    console.log('TS props: ', props);
     return (
         <section 
             id={props.section.anchor_id}
@@ -24,14 +23,25 @@ export default function TopicSection(props) {
                 >
                     {props.section.name}
                 </h3>
-
+                
                 {props.section.description && (
                         <p className="section_description">
                             {props.section.description}
                         </p>    
-                        
-                    
                 )}
+
+                <ul className="link_list">
+                    {props.section.external_links && (
+                        props.section.external_links.map(link => {
+                            return (
+                                <li key={link._id}>
+                                    <a href={link.url}>{link.description}</a>
+                                </li>
+                            )
+                        })
+                    )}
+                </ul>
+
             </div>
 
             {props.section.type === 'shortcut_table' 
