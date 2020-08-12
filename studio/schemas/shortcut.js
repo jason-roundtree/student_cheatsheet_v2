@@ -7,7 +7,7 @@ export default {
             title: 'Name',
             name: 'name',
             type: 'string',
-            validation: Rule => Rule.unique()
+            // validation: Rule => Rule.unique()
         },
         {
             title: 'Mac Command',

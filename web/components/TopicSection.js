@@ -8,7 +8,7 @@ import DescriptiveItem from './DescriptiveItem'
 // `
 
 export default function TopicSection(props) {
-    console.log('TS props: ', props);
+    // console.log('TS props: ', props);
     return (
         <section 
             id={props.section.anchor_id}
