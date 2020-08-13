@@ -7,7 +7,6 @@ import Footer from '../../components/Footer'
 import ToC from '../../components/TableOfContents'
 import NavMenu from '../../components/NavMenu'
 import TopicSection from '../../components/TopicSection'
-// import { styles } from 'prism-react-renderer/themes/oceanicNext'
 
 const SecondaryNavBar = styled.nav`
   display: flex;
@@ -41,12 +40,11 @@ export default function Index({ data }) {
   const [activeSection, setActiveSection] = useState(null)
 
   useEffect(() => {
-    window.addEventListener('scroll', throttle(handleScroll, 500))
-    window.addEventListener('scroll', throttle(handleObserver, 500))
+    window.addEventListener('scroll', throttle(handleScroll, 300))
+    window.addEventListener('scroll', throttle(handleObserver, 300))
     return () => {
-      window.removeEventListener('scroll', throttle(handleScroll, 500))
-      // TODO: this should be here, right?
-      window.addEventListener('scroll', throttle(handleObserver, 500))
+      window.removeEventListener('scroll', throttle(handleScroll, 300))
+      window.addEventListener('scroll', throttle(handleObserver, 300))
     }
   }, [data])
 

@@ -2,13 +2,11 @@ import React, { useState } from 'react'
 import TableRows from './TableRows'
 import styled from 'styled-components'
 import sortAlpha from '../utils/sorting'
-// import sortDown  from '../src/icons/sort-down.svg'
-// import sortUp  from '../src/icons/sort-up.svg'
-// import refresh  from '../src/icons/refresh.svg'
 
 const ShortcutNameTh = styled.th`
     &:hover {
         cursor: pointer;
+        background-color: rgb(230, 255, 255);
     }
 `
 const SortTextSpan = styled.span`
