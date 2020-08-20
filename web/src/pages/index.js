@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import throttle from 'lodash.throttle'
+import SEO from '../components/seo'
 import Layout from '../../components/layout'
 import Footer from '../../components/Footer'
 import ToC from '../../components/TableOfContents'
@@ -105,6 +106,7 @@ export default function Index({ data }) {
   return (
     <div>
       <Layout id="top-of-page">
+          <SEO />
           <ToC data={data.allSanitySection.edges} />
           
           {data.allSanitySection.edges.map(({node}) => {
