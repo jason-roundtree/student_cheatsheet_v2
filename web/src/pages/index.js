@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import throttle from 'lodash.throttle'
-import SEO from '../components/seo'
-import Layout from '../../components/layout'
-import Footer from '../../components/Footer'
-import ToC from '../../components/TableOfContents'
-import NavMenu from '../../components/NavMenu'
-import TopicSection from '../../components/TopicSection'
+import SEO from '../components/SEO'
+import Layout from '../components/Layout'
+import Footer from '../components/Footer'
+import ToC from '../components/TableOfContents'
+import NavMenu from '../components/NavMenu'
+import TopicSection from '../components/TopicSection'
 
 const SecondaryNavBar = styled.nav`
   display: flex;

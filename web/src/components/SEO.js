@@ -3,18 +3,15 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 // import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
-import Index from "../src/pages"
 
-// TODO: use this component on Index.js
-const SEO = ({ title, description, image }) => {
+const SEO = ({ title, description }) => {
     // const { pathname } = useLocation()
     const { site } = useStaticQuery(query)
-
     const {
         defaultTitle,
         defaultDescription,
-        siteUrl,
-        defaultImage,
+        // siteUrl,
+        // defaultImage,
     } = site.siteMetadata
 
     const seo = {
@@ -30,13 +27,13 @@ const SEO = ({ title, description, image }) => {
             <meta name="image" content={seo.image} />
             <meta name="author" content={seo.author} />
 
-            {seo.url && <meta property="og:url" content={seo.url} />}
+            {/* {seo.url && <meta property="og:url" content={seo.url} />}
 
             {seo.title && <meta property="og:title" content={seo.title} />}
 
             {seo.description && (
                 <meta property="og:description" content={seo.description} />
-            )}
+            )} */}
 
             {/* {seo.image && <meta property="og:image" content={seo.image} />} */}
             {/* {(article ? true : null) && <meta property="og:type" content="article" />} */}
@@ -66,7 +63,6 @@ const query = graphql`
                 siteMetadata {
                     defaultTitle: title
                     defaultDescription: description
-                    siteUrl: url
                 }
             }
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import TableRows from './TableRows'
 import styled from 'styled-components'
-import sortAlpha from '../utils/sorting'
+import sortAlpha from '../../utils/sorting'
 
 const ShortcutNameTh = styled.th`
     &:hover {
