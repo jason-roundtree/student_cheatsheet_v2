@@ -15,11 +15,6 @@ export default {
             rows: 4
         },
         {
-            title: 'Code Samples',
-            name: 'code_samples',
-            type: 'text'
-        },
-        {
             title: 'Code',
             name: 'code',
             type: 'code'
