@@ -155,13 +155,6 @@ export const query = graphql`
           _type
           name
           description
-          list_order
-          external_links {
-            _id
-            _type
-            description
-            url
-          }
           subsections {
             ... on SanityGeneralSubsection {
               _id
@@ -176,11 +169,7 @@ export const query = graphql`
                 description
                 url
               }
-              code {
-                _type
-                code
-                language
-              }
+              _rawDescriptionBlock(resolveReferences: {maxDepth: 10})
             }
             ... on SanityShortcutSubsection {
               id
@@ -192,8 +181,17 @@ export const query = graphql`
               notes
             }
           }
+          list_order
         }
       }
     }
+    # allSanityGeneralSubsection {
+    #   edges {
+    #     node {
+    #       id
+    #       _rawDescriptionBlock
+    #     }
+    #   }
+    # }
   }
 `

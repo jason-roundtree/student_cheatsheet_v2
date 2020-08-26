@@ -5,6 +5,7 @@ import section from './section'
 import subsection from './subsection'
 import external_link from './external_link'
 import shortcut from './shortcut'
+import code_highlight from './code_highlight'
 
 export default createSchema({
   name: 'cheatsheetSchema',
@@ -12,6 +13,7 @@ export default createSchema({
     section,
     subsection,
     external_link,
-    shortcut
+    shortcut,
+    code_highlight
   ])
 })

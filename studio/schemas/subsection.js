@@ -9,10 +9,26 @@ export default {
             type: 'string'
         },
         {
+            title: 'Description Block',
+            name: 'description_block',
+            type: 'array',
+            of: [
+                { 
+                    type: 'block',
+                    of: [
+                        { 
+                            type: 'code_highlight' 
+                        },
+                    ]
+                }
+            ],
+            rows: 7
+        },
+        {
             title: 'Description',
             name: 'description',
             type: 'text',
-            rows: 4
+            rows: 7
         },
         {
             title: 'Code',
