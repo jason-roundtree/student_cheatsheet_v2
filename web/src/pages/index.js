@@ -145,7 +145,7 @@ export default function Index({ data }) {
 
 export const query = graphql`
   {
-    allSanitySection(sort: {fields: list_order}) {
+    allSanitySection(sort: {fields: list_order}, filter: {section_active: {eq: true}}) {
       edges {
         node {
           _id
@@ -154,13 +154,20 @@ export const query = graphql`
           type
           _type
           name
-          description
+          _rawDescription(resolveReferences: {maxDepth: 10})
+          list_order
+          external_links {
+            _id
+            _type
+            description
+            url
+          }
           subsections {
             ... on SanityGeneralSubsection {
               _id
               _type
               name
-              description
+              _rawDescriptionBlock(resolveReferences: {maxDepth: 10})
               syntax
               subsection_active
               external_links {
@@ -169,7 +176,11 @@ export const query = graphql`
                 description
                 url
               }
-              _rawDescriptionBlock(resolveReferences: {maxDepth: 10})
+              code {
+                _type
+                code
+                language
+              }
             }
             ... on SanityShortcutSubsection {
               id
@@ -181,17 +192,8 @@ export const query = graphql`
               notes
             }
           }
-          list_order
         }
       }
     }
-    # allSanityGeneralSubsection {
-    #   edges {
-    #     node {
-    #       id
-    #       _rawDescriptionBlock
-    #     }
-    #   }
-    # }
   }
 `

@@ -1,6 +1,7 @@
 import React from 'react'
 import ShortcutTable from './ShortcutTable'
 import DescriptiveItem from './DescriptiveItem'
+import formatDescription from '../../utils/formatDescription'
 // import styled from 'styled-components'
 
 // const LinkList = styled.ul`
@@ -8,7 +9,7 @@ import DescriptiveItem from './DescriptiveItem'
 // `
 
 export default function TopicSection(props) {
-    console.log('TS props: ', props);
+    // console.log('TS props: ', props);
     return (
         <section 
             id={props.section.anchor_id}
@@ -24,10 +25,10 @@ export default function TopicSection(props) {
                     {props.section.name}
                 </h3>
                 
-                {props.section.description && (
-                        <p className="section_description">
-                            {props.section.description}
-                        </p>    
+                {props.section._rawDescription && (
+                    <p className="section_description">
+                        {formatDescription(props.section._rawDescription[0])}
+                    </p>    
                 )}
 
                 <ul className="link_list">

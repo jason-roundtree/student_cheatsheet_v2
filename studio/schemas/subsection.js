@@ -15,11 +15,7 @@ export default {
             of: [
                 { 
                     type: 'block',
-                    of: [
-                        { 
-                            type: 'code_highlight' 
-                        },
-                    ]
+                    of: [{ type: 'code_highlight' }]
                 }
             ],
             rows: 7

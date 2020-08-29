@@ -21,8 +21,14 @@ export default {
         {
             title: 'Description',
             name: 'description',
-            type: 'text',
-            rows: 4
+            type: 'array',
+            of: [
+                { 
+                    type: 'block',
+                    of: [{ type: 'code_highlight' }]
+                }
+            ],
+            rows: 7
         },
         {
             title: 'Subsections',

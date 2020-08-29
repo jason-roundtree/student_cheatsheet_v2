@@ -19,6 +19,7 @@ module.exports = {
       options: {
         projectId: 'up6uy0tw',
         dataset: 'production',
+        useCdn: false
         // a token with read permissions is required
         // if you have a private dataset
         // token: process.env.MY_SANITY_TOKEN,

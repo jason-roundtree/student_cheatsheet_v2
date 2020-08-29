@@ -1,7 +1,8 @@
 import React from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
 import styled from 'styled-components'
-import duotoneLight from 'prism-react-renderer/themes/oceanicNext'
+import Highlight, { defaultProps } from 'prism-react-renderer'
+import codeTheme from 'prism-react-renderer/themes/oceanicNext'
+import formatDescription from '../../utils/formatDescription'
 
 const Pre = styled.pre`
     font-family: 'Inconsolata', monospace;
@@ -29,59 +30,58 @@ export default function DescriptiveItem({ section }) {
     return (
         <div>
             {section.subsections.map(secData => {
-                    // console.log('secData: ', secData)
-                    return (
-                        <div 
-                            className="description_container"
-                            key={secData.name}
-                        >
-                            <h4>{secData.name}</h4>
+                return (
+                    <div 
+                        className="description_container"
+                        key={secData.name}
+                    >
+                        <h4>{secData.name}</h4>
 
-                            {secData.description && (
-                                <p>{secData.description}</p>
-                            )}
+                        {secData._rawDescriptionBlock && (
+                            <p>{formatDescription(secData._rawDescriptionBlock[0])}</p>
+                        )}
 
-                            {secData.code && (
-                                <Highlight 
-                                    {...defaultProps} 
-                                    code={secData.code.code} 
-                                    theme={duotoneLight}
-                                    language="jsx"
-                                >
-                                    {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                                        <Pre className={className} style={style}>
-                                            {tokens.map((line, i) => (
-                                                <div {...getLineProps({line, key: i})}>
-                                                    <LineNo>{i + 1}</LineNo>
-                                                    {line.map((token, key) => (
-                                                        <span {...getTokenProps({token, key})} />
-                                                    ))}
-                                                </div>
-                                            ))}
-                                        </Pre>
-                                    )}
-                                </Highlight>
-                            )}
+                        {secData.code && (
+                            <Highlight 
+                                {...defaultProps} 
+                                code={secData.code.code} 
+                                theme={codeTheme}
+                                language={secData.code.language}
+                            >
+                                {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                                    <Pre className={className} style={style}>
+                                        {tokens.map((line, i) => (
+                                            <div {...getLineProps({line, key: i})}>
+                                                <LineNo>{i + 1}</LineNo>
+                                                {line.map((token, key) => (
+                                                    <span {...getTokenProps({token, key})} />
+                                                ))}
+                                            </div>
+                                        ))}
+                                    </Pre>
+                                )}
+                            </Highlight>
+                        )}
 
-                            {secData.external_links.length > 0 && (
-                                <ul>
-                                    {secData.external_links.map(link => (
-                                        <li key={link._id}>
-                                            <a 
-                                                href={link.url} 
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                {link.description}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
-                        </div>
-                    )
-                })
-            }
+                        {secData.external_links.length > 0 && (
+                            <ul>
+                                {secData.external_links.map(link => (
+                                    <li key={link._id}>
+                                        <a 
+                                            href={link.url} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {link.description}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
+                )
+            
+            })}
         </div>
     )
 }
