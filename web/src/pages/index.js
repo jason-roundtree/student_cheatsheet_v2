@@ -145,7 +145,7 @@ export default function Index({ data }) {
 
 export const query = graphql`
   {
-    allSanitySection(sort: {fields: list_order}, filter: {section_active: {eq: true}}) {
+    allSanitySection(sort: {fields: list_order}) {
       edges {
         node {
           _id
@@ -167,7 +167,7 @@ export const query = graphql`
               _id
               _type
               name
-              _rawDescriptionBlock(resolveReferences: {maxDepth: 10})
+              _rawDescriptionSubsection(resolveReferences: {maxDepth: 10})
               syntax
               subsection_active
               external_links {
@@ -187,9 +187,9 @@ export const query = graphql`
               _id
               _type
               name
-              mac_command
-              windows_command
               notes
+              _rawMacCommand(resolveReferences: {maxDepth: 10})
+              _rawWindowsCommand(resolveReferences: {maxDepth: 10})
             }
           }
         }

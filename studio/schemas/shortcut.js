@@ -12,12 +12,24 @@ export default {
         {
             title: 'Mac Command',
             name: 'mac_command',
-            type: 'string'
+            type: 'array',
+            of: [
+                { 
+                    type: 'block',
+                    of: [{ type: 'kbd_unhighlight' }]
+                }
+            ],
         },
         {
             title: 'Windows Command',
             name: 'windows_command',
-            type: 'string'
+            type: 'array',
+            of: [
+                { 
+                    type: 'block',
+                    of: [{ type: 'kbd_unhighlight' }]
+                }
+            ],
         },
         {
             title: 'Url',

@@ -1,7 +1,7 @@
 import React from 'react'
 import ShortcutTable from './ShortcutTable'
 import DescriptiveItem from './DescriptiveItem'
-import formatDescription from '../../utils/formatDescription'
+import formatInlineCode from '../../utils/formatInlineCode'
 // import styled from 'styled-components'
 
 // const LinkList = styled.ul`
@@ -27,7 +27,7 @@ export default function TopicSection(props) {
                 
                 {props.section._rawDescription && (
                     <p className="section_description">
-                        {formatDescription(props.section._rawDescription[0])}
+                        {formatInlineCode(props.section._rawDescription[0])}
                     </p>    
                 )}
 

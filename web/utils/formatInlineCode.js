@@ -1,7 +1,7 @@
 import React from 'react'
 import HighlightInlineCode from '../src/components/HighlightInlineCode'
 
-export default function formatDescription(content) {
+export default function formatInlineCode(content) {
     const descriptionBlock = []
     content.children.forEach(inlineBlock => {
         // console.log('inlineBlock: ', inlineBlock)

@@ -6,6 +6,7 @@ import subsection from './subsection'
 import external_link from './external_link'
 import shortcut from './shortcut'
 import code_highlight from './code_highlight'
+import kbd_unhighlight from './kbd_unhighlight'
 
 export default createSchema({
   name: 'cheatsheetSchema',
@@ -14,6 +15,7 @@ export default createSchema({
     subsection,
     external_link,
     shortcut,
-    code_highlight
+    code_highlight,
+    kbd_unhighlight
   ])
 })

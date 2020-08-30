@@ -9,8 +9,8 @@ export default {
             type: 'string'
         },
         {
-            title: 'Description Block',
-            name: 'description_block',
+            title: 'Description',
+            name: 'description_subsection',
             type: 'array',
             of: [
                 { 
@@ -18,12 +18,6 @@ export default {
                     of: [{ type: 'code_highlight' }]
                 }
             ],
-            rows: 7
-        },
-        {
-            title: 'Description',
-            name: 'description',
-            type: 'text',
             rows: 7
         },
         {

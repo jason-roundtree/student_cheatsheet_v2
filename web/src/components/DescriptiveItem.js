@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import codeTheme from 'prism-react-renderer/themes/oceanicNext'
-import formatDescription from '../../utils/formatDescription'
+import formatInlineCode from '../../utils/formatInlineCode'
 
 const Pre = styled.pre`
     font-family: 'Inconsolata', monospace;
@@ -30,6 +30,7 @@ export default function DescriptiveItem({ section }) {
     return (
         <div>
             {section.subsections.map(secData => {
+                // console.log('secData.code: ', secData)
                 return (
                     <div 
                         className="description_container"
@@ -37,11 +38,12 @@ export default function DescriptiveItem({ section }) {
                     >
                         <h4>{secData.name}</h4>
 
-                        {secData._rawDescriptionBlock && (
-                            <p>{formatDescription(secData._rawDescriptionBlock[0])}</p>
+                        {secData._rawDescriptionSubsection && (
+                            <p>{formatInlineCode(secData._rawDescriptionSubsection[0])}</p>
                         )}
-
-                        {secData.code && (
+                        
+                        {/* // `secData.code.code` is necessary because Sanity CMS can insert a blank code field on auto-save when you accidentally type into the code field but later delete the text. TODO: figure out how to prevent this in Sanity */}
+                        {secData.code && secData.code.code && (
                             <Highlight 
                                 {...defaultProps} 
                                 code={secData.code.code} 
