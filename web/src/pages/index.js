@@ -104,8 +104,8 @@ export default function Index({ data }) {
   }
   
   return (
-    <div>
-      <Layout id="top-of-page">
+    <div id="top-of-page">
+      <Layout>
           <SEO />
           <ToC data={data.allSanitySection.edges} />
           

@@ -82,7 +82,6 @@ export default function DescriptiveItem({ section }) {
                         )}
                     </div>
                 )
-            
             })}
         </div>
     )
