@@ -1,5 +1,5 @@
 import React from 'react'
-import { navigate } from "@reach/router"
+import { navigate } from '@reach/router'
 import styled from 'styled-components'
 
 const Container = styled.div`

@@ -17,10 +17,14 @@ const StyledLink = styled(props => <Link {...props} />)`
     &:hover {
         border-bottom: 2px solid rgb(144, 210, 245);
     }
+    ${({ active }) => active && `
+        color: rgb(144, 210, 245);
+        text-shadow: rgb(94, 183, 232) 1px 0 10px;
+    `}
 `
 
 export default function NavMenu({ data, handleNavMenuToggle, activeSection }) {
-    // console.log('menu props: ', data)
+    console.log('menu props activeSection: ', activeSection)
     return (
         <NavMenuPanel>
             <ul id="navmenu_list">
@@ -31,10 +35,11 @@ export default function NavMenu({ data, handleNavMenuToggle, activeSection }) {
                     return node.section_active && (
                         <li key={node._id}>
                             <StyledLink 
+                                // href={`#${node.anchor_id}`}
                                 to={`#${node.anchor_id}`}
                                 onClick={handleNavMenuToggle}
                                 // TODO: instead of keeping current-section class in css file is there a way to do it with styled-components props and Gatsby
-                                className={node.anchor_id === activeSection && 'current-section'}
+                                active={node.anchor_id === activeSection}
                             >
                                 {node.name}
                             </StyledLink>

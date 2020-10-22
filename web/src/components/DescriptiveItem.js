@@ -9,7 +9,7 @@ const Pre = styled.pre`
     font-size: .9em;
     overflow: auto;
     text-align: left;
-    padding: 0.5em 0.5em 0.5em 0;
+    padding: 0.5em 0.5em 0.75em 0;
     & .token-line {
         line-height: 1.4em;
         height: 1.3em;

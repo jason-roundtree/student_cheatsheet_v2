@@ -232,19 +232,8 @@ footer span {
     line-height: 1.5;
 }
 
-.current-section.current-section {
-    color: rgb(144, 210, 245);
-    text-shadow: rgb(94, 183, 232) 1px 0 10px;
-}
-
-.highlight.highlight {
-    /* font-size: 1.2em; */
-    color: rgb(144, 210, 245);
-}
-
 @media screen and (max-width: 672px) {
     body {
         font-size: .8em;  
     }
-  
 }

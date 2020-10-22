@@ -41,11 +41,11 @@ export default function Index({ data }) {
   const [activeSection, setActiveSection] = useState(null)
 
   useEffect(() => {
-    window.addEventListener('scroll', throttle(handleScroll, 300))
-    window.addEventListener('scroll', throttle(handleObserver, 300))
+    window.addEventListener('scroll', throttle(handleScroll, 0))
+    window.addEventListener('scroll', throttle(handleObserver, 0))
     return () => {
-      window.removeEventListener('scroll', throttle(handleScroll, 300))
-      window.addEventListener('scroll', throttle(handleObserver, 300))
+      window.removeEventListener('scroll', throttle(handleScroll, 0))
+      window.addEventListener('scroll', throttle(handleObserver, 0))
     }
   }, [data])
 
@@ -132,7 +132,7 @@ export default function Index({ data }) {
               data={data.allSanitySection.edges} 
               handleNavMenuToggle={handleNavMenuToggle}
               activeSection={activeSection}
-              id="navmenu_list"
+              // id="navmenu_list"
             />
           )}
         </SecondaryNavBar>
