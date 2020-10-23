@@ -24,7 +24,7 @@ const StyledLink = styled(props => <Link {...props} />)`
 `
 
 export default function NavMenu({ data, handleNavMenuToggle, activeSection }) {
-    console.log('menu props activeSection: ', activeSection)
+    // console.log('menu props activeSection: ', activeSection)
     return (
         <NavMenuPanel>
             <ul id="navmenu_list">
