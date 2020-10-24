@@ -25,5 +25,8 @@ module.exports = {
         // token: process.env.MY_SANITY_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+    },
   ],
 }
