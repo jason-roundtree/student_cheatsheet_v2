@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 export default function TableOfContents({ data }) {
     // console.log('ToC data: ', data)
@@ -11,15 +12,15 @@ export default function TableOfContents({ data }) {
                         // console.log('node map', node)
                         return (
                             <li key={node._id}>
-                                <a 
-                                    href={`#${node.anchor_id}`}
+                                <Link 
+                                    to={`#${node.anchor_id}`}
                                     className={node.section_active  
                                         ? '' 
                                         : 'incomplete_section'
                                     }
                                 >
                                     {node.name}
-                                </a>
+                                </Link>
                             </li>
                         )
                     })}

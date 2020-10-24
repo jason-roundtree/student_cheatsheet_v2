@@ -38,53 +38,13 @@ export default function Index({ data }) {
   // these "nav" references are for the secondary nav that appears once you've scrolled past table of contents
   const [navIsActive, setNavIsActive] = useState(false)
   const [navMenuIsActive, setNavMenuIsActive] = useState(false)
-  const [activeSection, setActiveSection] = useState(null)
 
   useEffect(() => {
-    window.addEventListener('scroll', throttle(handleScroll, 300))
-    window.addEventListener('scroll', throttle(handleObserver, 300))
+    window.addEventListener('scroll', throttle(handleScroll, 400))
     return () => {
-      window.removeEventListener('scroll', throttle(handleScroll, 300))
-      window.addEventListener('scroll', throttle(handleObserver, 300))
+      window.removeEventListener('scroll', throttle(handleScroll, 400))
     }
-  }, [data])
-
-  function handleObserver() {
-    // console.log('handleObserver')
-    const options = { rootMargin: '-30px 0px -50% 0px' };
-    const observer = new IntersectionObserver(checkIntersection, options)
-
-    const topicSections = document.querySelectorAll('section')
-    topicSections.forEach(section => {
-      observer.observe(section)
-    })
-    
-    function checkIntersection(entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          intersectionHandler(entry)
-        }
-      })
-    }
-
-    function intersectionHandler(entry) {
-      // console.log('intersectionHandler entry: ', entry)
-      const id = entry.target.id      
-      setActiveSection(id)
-      const currentlyActive = document.querySelector('#navmenu_list .current-section')
-      // console.log('currentlyActive: ', currentlyActive)
-      const shouldBeActive = document.querySelector(`#navmenu_list a[href='#${id}']`)
-      // console.log('shouldBeActive: ', shouldBeActive)
-      if (currentlyActive) {
-        currentlyActive.classList.remove('current-section')
-        // console.log('currentlyActive if: ', currentlyActive)
-      }
-      if (shouldBeActive) {
-        shouldBeActive.classList.add('current-section')
-        // console.log('shouldBeActive if: ', shouldBeActive)
-      }
-    }
-  }
+  }, [])
 
   function handleScroll() {
     // console.log('handleScroll')
@@ -131,8 +91,6 @@ export default function Index({ data }) {
             <NavMenu 
               data={data.allSanitySection.edges} 
               handleNavMenuToggle={handleNavMenuToggle}
-              activeSection={activeSection}
-              // id="navmenu_list"
             />
           )}
         </SecondaryNavBar>
