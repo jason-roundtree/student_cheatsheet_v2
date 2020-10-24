@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import codeTheme from 'prism-react-renderer/themes/oceanicNext'
-import formatInlineCode from '../../utils/formatInlineCode'
+import formatInlineCode from '../utils/formatInlineCode'
 
 const Pre = styled.pre`
     font-family: 'Inconsolata', monospace;

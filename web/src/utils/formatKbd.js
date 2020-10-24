@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import HighlightKbd from '../src/components/HighlightKbd'
+import HighlightKbd from '../components/HighlightKbd'
 
 const Unhighlighted = styled.span`
     padding: 5px;

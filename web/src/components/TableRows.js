@@ -1,5 +1,5 @@
 import React from 'react'
-import formatKbd from '../../utils/formatKbd'
+import formatKbd from '../utils/formatKbd'
 
 export default function TableRows(props) {
     // console.log('TR props: ', props)

@@ -1,5 +1,5 @@
 import React from 'react'
-import HighlightInlineCode from '../src/components/HighlightInlineCode'
+import HighlightInlineCode from '../components/HighlightInlineCode'
 
 export default function formatInlineCode(content) {
     const descriptionBlock = []

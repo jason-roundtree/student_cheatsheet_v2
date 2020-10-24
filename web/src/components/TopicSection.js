@@ -1,7 +1,7 @@
 import React from 'react'
 import ShortcutTable from './ShortcutTable'
 import DescriptiveItem from './DescriptiveItem'
-import formatInlineCode from '../../utils/formatInlineCode'
+import formatInlineCode from '../utils/formatInlineCode'
 // import styled from 'styled-components'
 
 // const LinkList = styled.ul`
