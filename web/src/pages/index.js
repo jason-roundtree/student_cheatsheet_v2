@@ -46,6 +46,7 @@ export default function Index({ data }) {
     }
   }, [])
 
+  
   function handleScroll() {
     // console.log('handleScroll')
     // TODO: is this all neccessary for cross-browser issues?

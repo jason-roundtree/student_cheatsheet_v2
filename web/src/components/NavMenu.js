@@ -28,12 +28,13 @@ export default function NavMenu({ data, handleNavMenuToggle, }) {
     const [activeSection, setActiveSection] = useState(null)
     // console.log('menu props activeSection: ', activeSection)
     useEffect(() => {
+        handleObserver()
         window.addEventListener("scroll", throttle(handleObserver, 400))
         return () => {
-        window.addEventListener("scroll", throttle(handleObserver, 400))
+            window.removeEventListener("scroll", throttle(handleObserver, 400))
         }
     }, [])
-
+    
     function handleObserver() {
         // console.log('handleObserver')
         const options = { rootMargin: "-30px 0px -50% 0px" }
@@ -53,21 +54,8 @@ export default function NavMenu({ data, handleNavMenuToggle, }) {
         }
 
         function intersectionHandler(entry) {
-            // console.log('intersectionHandler entry: ', entry)
             const id = entry.target.id
             setActiveSection(id)
-            const currentlyActive = document.querySelector(
-                "#navmenu_list .current-section"
-            )
-            const shouldBeActive = document.querySelector(
-                `#navmenu_list a[href='#${id}']`
-            )
-            if (currentlyActive) {
-                currentlyActive.classList.remove("current-section")
-            }
-            if (shouldBeActive) {
-                shouldBeActive.classList.add("current-section")
-            }
         }
     }
     return (
@@ -81,7 +69,7 @@ export default function NavMenu({ data, handleNavMenuToggle, }) {
                         node.section_active && (
                             <li key={node._id}>
                                 <StyledLink
-                                    href={`#${node.anchor_id}`}
+                                    // href={`#${node.anchor_id}`}
                                     to={`#${node.anchor_id}`}
                                     onClick={handleNavMenuToggle}
                                     active={node.anchor_id === activeSection}
