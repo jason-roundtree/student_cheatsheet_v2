@@ -29,7 +29,6 @@ const NavMenuBtn = styled.button`
   border: none;
   &:hover {
     cursor: pointer;
-    /* text-shadow: rgb(94, 183, 232) 1px 0 10px; */
     text-shadow: rgb(255, 253, 240) 1px 0 10px;
   }
 `
@@ -46,7 +45,6 @@ export default function Index({ data }) {
     }
   }, [])
 
-  
   function handleScroll() {
     // console.log('handleScroll')
     // TODO: is this all neccessary for cross-browser issues?
@@ -83,7 +81,6 @@ export default function Index({ data }) {
       {navIsActive && (
         <SecondaryNavBar>
           <NavMenuBtn 
-            id="navmenu_button"
             onClick={handleNavMenuToggle}
           >
             Toggle Menu

@@ -15,6 +15,7 @@ const NavMenuPanel = styled.nav`
 `
 const StyledLink = styled(props => <Link {...props} />)`
     color: rgb(255, 159, 128);
+    margin: 7px 0;
     &:hover {
         border-bottom: 2px solid rgb(144, 210, 245);
     }
@@ -60,7 +61,7 @@ export default function NavMenu({ data, handleNavMenuToggle, }) {
     }
     return (
         <NavMenuPanel>
-            <ul id="navmenu_list">
+            <ul>
                 <li>
                     <StyledLink to="#top-of-page">Home</StyledLink>
                 </li>
