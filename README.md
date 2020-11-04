@@ -32,9 +32,10 @@ https://webdevreference.jasonroundtree.info/
 - List of good resources, books, blogs, developers, etc.
 
 ## TODOs
-- Add internal links between references to other sections
+- Add internal links for references between sections
 - Add sub-sections/links to Table of Contents and Nav
 - Add tests
 - Add more code examples for sections like Git, CLI, Array methods, DOM
 - Add gifs for VS Code shortcuts
 - Add favicon
+- Change nav menu? 
