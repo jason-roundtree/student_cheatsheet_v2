@@ -1,5 +1,7 @@
 # Web Development Reference & Cheatsheet
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5d1087bb-517f-4d13-86cf-81e5b43ac707/deploy-status)](https://app.netlify.com/sites/webdevereference/deploys)
+
 https://webdevreference.jasonroundtree.info/
 
 ## Current Topics Include
