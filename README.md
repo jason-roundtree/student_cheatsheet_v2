@@ -22,7 +22,8 @@ https://webdevreference.jasonroundtree.info/
 
 ## Topics Under Construction
 - JavaScript Types
-- JavaScript Sync/Async
+- Asynchronous JavaScript (AJAX, Promises, Callbacks, Async, Event Loop, etc.)
+- ES Modules, Import/Export
 - JavaScript Gotchas
 - React
 - Accessibility
@@ -34,6 +35,7 @@ https://webdevreference.jasonroundtree.info/
 ## TODOs
 - Add internal links for references between sections
 - Add sub-sections/links to Table of Contents and Nav
+- Rename repo
 - Add tests
 - Add more code examples for sections like Git, CLI, Array methods, DOM
 - Add gifs for VS Code shortcuts
